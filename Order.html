@@ -1,15 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url('darkflower.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                color: white;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            form {
+                background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+                padding: 20px;
+                border-radius: 10px;
+                width: 350px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            }
+    
+            label {
+                font-size: 16px;
+                font-weight: bold;
+            }
+    
+            input, select, textarea {
+                width: 100%;
+                padding: 8px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 5px;
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                font-size: 14px;
+            }
+    
+            input::placeholder, textarea::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+    
+            select {
+                cursor: pointer;
+            }
+    
+            .flower, .plants {
+                margin-top: 10px;
+            }
+    
+            input[type="radio"], input[type="checkbox"] {
+                width: auto;
+                margin-right: 5px;
+            }
+    
+            .button {
+                text-align: center;
+                margin-top: 15px;
+            }
+    
+            button {
+                background: #ff6600;
+                color: white;
+                padding: 10px 15px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+                width: 100%;
+            }
+    
+            button:hover {
+                background: #ff4500;
+            }
+        </style>
+        <title>Order any Plant or Flower</title>
+    </head>
+    
     <title>Order any Plant or Flower</title>
 </head>
+
 <body>
     <form action="submit.php">
         <div class="name">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Enter Name">
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email">
+        </div>
+        <div class="contact">
+            <label for="contact">Contact</label>
+            <input type="text" id="contact" placeholder="Enter contact">
+        </div>
+        <div class="catagory">
+            <select name="plants" id="plants">
+                <option value="plants" disabled selected>Choose category</option>
+                <option value="plants">Plants</option>
+                <option value="flower">Flower</option>
+            </select>
+        </div><br><br>
+        <div class="flower">
+            <label for="flower">Choose flower type:</label><br>
+            <input type="radio" id="Rose" name="flower" value="Rose">
+            <label for="Rose">Rose</label><br>
+            <input type="radio" id="Sunflower" name="flower" value="Sunflower">
+            <label for="Sunflower">Sunflower</label><br>
+            <input type="radio" id="Lily" name="flower" value="Lily">
+            <label for="Lily">Lily</label><br>
+            <input type="radio" id="Chrysanthemum" name="flower" value="Chrysanthemum">
+            <label for="Chrysanthemum">Chrysanthemum</label><br>
+            <input type="radio" id="Lotus" name="flower" value="Lotus">
+            <label for="Lotus">Lotus</label><br>
+            <input type="radio" id="Tulip" name="flower" value="Tulip">
+            <label for="Tulip">Tulip</label><br>
+        </div>
+        <div class="plants">
+            <label for="plants">Choose plant type:</label><br>
+            <input type="radio" id="Cactus" name="plants" value="Cactus">
+            <label for="Cactus">Cactus</label><br>
+            <input type="radio" id="Money Plant" name="plants" value="Money Plant">
+            <label for="Money Plant">Money Plant</label><br>
+            <input type="radio" id="Marigold" name="plants" value="Marigold">
+            <label for="Marigold">Marigold</label><br>
+            <input type="radio" id="Jasmine" name="plants" value="Jasmine">
+            <label for="Jasmine">Jasmine</label><br>
+            <input type="radio" id="Aloe Vera" name="plants" value="Aloe Vera">
+            <label for="Aloe Vera">Aloe Vera</label><br>
+        </div><br><br>
+        <input type="checkbox"> I agree to the following terms and conditions <br><br>
+        <div class="feedback">
+            <textarea name="feedback" id="feedback" placeholder="Give your feedback...." rows="5"></textarea>
+        </div>
+        <div class="button">
+            <button class="submit.php">Submit</button>
         </div>
     </form>
 </body>
