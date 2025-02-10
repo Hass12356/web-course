@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,59 +16,86 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding-top: 70px;
+            /* Prevent content from hiding behind navbar */
         }
 
+        /* Navbar Enhancements */
         nav {
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
             text-align: center;
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
             font-size: 18px;
             font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
         nav a:hover {
             color: black;
             background-color: white;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
         }
 
+        /* Form Enhancements */
         form {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            width: 350px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-            margin-top: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            width: 380px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+            margin-top: 30px;
         }
 
         label {
             font-size: 16px;
             font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin: 8px 0;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
             font-size: 14px;
+            transition: 0.3s;
         }
 
-        input::placeholder, textarea::placeholder {
+        input:focus,
+        select:focus,
+        textarea:focus {
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
 
@@ -75,87 +103,120 @@
             cursor: pointer;
         }
 
-        input[type="radio"], input[type="checkbox"] {
+        input[type="radio"],
+        input[type="checkbox"] {
             width: auto;
             margin-right: 5px;
         }
 
         .button {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         button {
-            background: #ff6600;
+            background: linear-gradient(45deg, #ff6600, #ff3300);
             color: white;
-            padding: 10px 15px;
+            padding: 12px 18px;
             font-size: 16px;
+            font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
             width: 100%;
         }
 
         button:hover {
-            background: #ff4500;
+            background: linear-gradient(45deg, #ff4500, #cc2900);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            form {
+                width: 90%;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="index.html" target="_blank">Home</a>
         <a href="about.html" target="_blank">About Us</a>
         <a href="Order.html">Order Us</a>
     </nav>
-    
+
     <form action="submit.php">
         <div class="name">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="name" placeholder="Enter Name" required>
         </div>
         <div class="email">
             <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Enter email">
+            <input type="text" id="email" placeholder="Enter email" required>
         </div>
         <div class="contact">
             <label for="contact">Contact</label>
-            <input type="text" id="contact" placeholder="Enter contact">
+            <input type="text" id="contact" placeholder="Enter contact" required>
         </div>
         <div class="category">
             <label for="plants">Choose category:</label>
             <select name="category" id="category">
                 <option value="" disabled selected>Choose category</option>
-                <option value="plants">Plants</option>
-                <option value="flower">Flower</option>
+                <option value="plants" required>Plants</option>
+                <option value="flower" required>Flower</option>
             </select>
         </div>
         <br>
         <div class="flower">
             <label>Choose flower type:</label><br>
-            <input type="radio" id="Rose" name="orderType" value="Rose"> <label for="Rose">Rose</label><br>
-            <input type="radio" id="Sunflower" name="orderType" value="Sunflower"> <label for="Sunflower">Sunflower</label><br>
-            <input type="radio" id="Lily" name="orderType" value="Lily"> <label for="Lily">Lily</label><br>
-            <input type="radio" id="Chrysanthemum" name="orderType" value="Chrysanthemum"> <label for="Chrysanthemum">Chrysanthemum</label><br>
-            <input type="radio" id="Lotus" name="orderType" value="Lotus"> <label for="Lotus">Lotus</label><br>
-            <input type="radio" id="Tulip" name="orderType" value="Tulip"> <label for="Tulip">Tulip</label><br>
+            <input type="radio" id="Rose" name="orderType" value="Rose" required> <label for="Rose">Rose</label><br>
+            <input type="radio" id="Sunflower" name="orderType" value="Sunflower" required> <label
+                for="Sunflower">Sunflower</label><br>
+            <input type="radio" id="Lily" name="orderType" value="Lily" required> <label for="Lily">Lily</label><br>
+            <input type="radio" id="Chrysanthemum" name="orderType" value="Chrysanthemum" required> <label
+                for="Chrysanthemum">Chrysanthemum</label><br>
+            <input type="radio" id="Lotus" name="orderType" value="Lotus" required> <label for="Lotus">Lotus</label><br>
+            <input type="radio" id="Tulip" name="orderType" value="Tulip" required> <label for="Tulip">Tulip</label><br>
         </div>
         <div class="plants">
             <label>Choose plant type:</label><br>
-            <input type="radio" id="Cactus" name="orderType" value="Cactus"> <label for="Cactus">Cactus</label><br>
-            <input type="radio" id="Money Plant" name="orderType" value="Money Plant"> <label for="Money Plant">Money Plant</label><br>
-            <input type="radio" id="Marigold" name="orderType" value="Marigold"> <label for="Marigold">Marigold</label><br>
-            <input type="radio" id="Jasmine" name="orderType" value="Jasmine"> <label for="Jasmine">Jasmine</label><br>
-            <input type="radio" id="Aloe Vera" name="orderType" value="Aloe Vera"> <label for="Aloe Vera">Aloe Vera</label><br>
+            <input type="radio" id="Cactus" name="orderType" value="Cactus" required> <label
+                for="Cactus">Cactus</label><br>
+            <input type="radio" id="Money Plant" name="orderType" value="Money Plant" required> <label
+                for="Money Plant">Money Plant</label><br>
+            <input type="radio" id="Marigold" name="orderType" value="Marigold" required> <label
+                for="Marigold">Marigold</label><br>
+            <input type="radio" id="Jasmine" name="orderType" value="Jasmine" required> <label
+                for="Jasmine">Jasmine</label><br>
+            <input type="radio" id="Aloe Vera" name="orderType" value="Aloe Vera" required> <label for="Aloe Vera">Aloe
+                Vera</label><br>
         </div>
         <br>
         <input type="checkbox"> I agree to the following terms and conditions <br><br>
         <div class="feedback">
-            <textarea name="feedback" id="feedback" placeholder="Give your feedback...." rows="5"></textarea>
+            <textarea name="feedback" id="feedback" placeholder="Give your feedback...." rows="5" required></textarea>
         </div>
         <div class="button">
             <button type="submit">Submit</button>
         </div>
     </form>
 </body>
+
 </html>
