@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Element selector */
+        div{
+            background-color: blue;
+            color: white;
+        }
+        /* Class Selector */
+        .red{
+            background-color: red;
+            color: yellow;
+        }
+        /* Child Selector */
+        div > p{
+            background-color: yellow;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        /* Id selector */
+        #purple{
+            background-color: purple;
+        }
+        /* Descendant Selector */
+        div p{
+            background-color: orange;
+            margin: 0;
+            padding: 0;
+        }
+        /* Pesudo Selector */
+        p:first-child{
+            background-color: brown;
+        }
+        a:visited{
+            color: red;
+        }
+        a:link{
+            color:green;
+        }
+        a:active{
+            color:red;
+        }
+        a:hover{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <title>Selectors Paractice</title>
+</head>
+<body>
+    <div>
+        Hi you are writing in div tag.
+    </div>
+    <div class="red">
+        Hi I am a div tag of class red 
+    </div>
+    <!-- <div>
+        <p>I am a child of div</p>
+    </div> -->
+    <div id="purple">
+        I am a div of id purple
+    </div>
+    <!-- <div>
+        <article>
+            <p>I am p inside article of div tag.</p>
+        </article>
+    </div> -->
+    <div>
+        <p>I am a first child</p>
+        <p>I am a second child</p>
+    </div>
+    <a href="https://www.google.com" target="_blank"> Go to google</a><br>
+    <a href="https://www.wikipedia.com">wikipedia</a><br>
+    <a href="https://www.instagram.com" target="_blank">Active instagram</a>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Element selector */
+        /* div {
+            background-color: red;
+        } */
+
+        /* Class Selector */
+        .red{
+            background-color: red;
+        }
+
+        /* ID Selector */
+        #green{
+            background-color: green;
+        }
+
+        /* Child Selector */
+        div > p{
+            color: blue;
+            background-color:yellow;
+        }
+
+        /* Descendant Selector */
+        div p {
+            color: blue;
+            background-color:yellow;
+        }
+
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Pesudo Selector */
+        a:visited{
+            color: red;
+        }
+        a:link{
+            color: green;
+        }
+        a:active{
+            background-color: red;
+        }
+        a:hover{
+            background-color:yellow;
+        }
+        p:first-child{
+            background-color: aqua;
+        }
+    </style>
+    <title>Selectors in CSS</title>
+</head>
+
+<body>
+    <main>
+        <p>I am first child</p>
+        <p>I am Second child</p>
+    </main>
+    <div class="red">
+        I am a div tag.
+        <article>
+            <p>I am para inside div</p>
+        </article>
+    </div>
+    <div id="green">
+        I am another div tag.
+    </div>
+    <a href="https://www.google.com" target="_blank">Go to google</a><br>
+    <a href="https://www.wikipedia.com">Go to wikipedia</a>
+</body>
+
+</html>
