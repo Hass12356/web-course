@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* specificity = 1 */
+        h1{
+            color: aqua;
+        }
+        /* specificity = 10 + 1 (Element) = 11 */
+        h1.yellow{
+            color: yellow;
+        }
+        /* specificity = 10 */
+        .cred{
+            color: red;
+        }
+        /* specificity = 10 */
+        .cpurple{
+            color:purple;
+        }
+        /* Attribute Selector /* specificity = 10 */ 
+        [heading-x="a"]{
+            color:brown;
+        }
+    </style>
+    <title>Specificity and Cascade</title>
+</head>
+<body>
+    <div>
+        <h1 class="yellow  cpurple cred"  heading-x="a">CSS Speificity</h1>
+    </div>
+    <!-- Hierarachy of styling: Inline > ID > Class or attribute > element > Universal -->
+    <!-- When we put word important on  any class or attribute it will inherit that style regardless of its specificity level.-->
+     <!-- Specificity Values:
+      1. Universal = 0
+      2. Elements and pseudo = 1
+      3. Class or attribute or pseudo classes = 10
+      4. ID = 100
+      5. Inline = 100 -->
+</body>
+</html>
